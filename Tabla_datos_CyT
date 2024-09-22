@@ -1,18 +1,54 @@
-CREATE TABLE `cell` (
->>   `id` int(11) NOT NULL DEFAULT '0',
->>   `country_id` varchar(2) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,   
->>   `row_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,      
->>   `indicator_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
->>   `year` int(11) DEFAULT NULL,
->>   `value` decimal(18,4) NOT NULL
->> ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Volcado de datos para la tabla `country`
+--
 
-LOAD DATA INFILE 'C:\GITHUB\Repo\Datos_paises_ciencia.csv'
-INTO TABLE cell
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-(id, country_id, row_id, indicator_id, year, value);
+INSERT INTO `country` (`id`, `sort_order`, `name_es`, `name_en`, `language`, `is_region`, `visible`) VALUES
+('AL', 30, 'América Latina y el Caribe', 'Latin America and the Caribbean', 'ES', 1, 1),
+('AM', 31, 'América Latina', 'Latin America', 'ES', 1, 1),
+('AR', 1, 'Argentina', 'Argentina', 'ES', 0, 1),
+('BB', 2, 'Barbados', 'Barbados', 'EN', 0, 1),
+('BO', 3, 'Bolivia', 'Bolivia', 'ES', 0, 1),
+('BR', 4, 'Brasil', 'Brazil', 'ES', 0, 1),
+('CA', 5, 'Canadá', 'Canada', 'EN', 0, 1),
+('CL', 6, 'Chile', 'Chile', 'ES', 0, 1),
+('CO', 7, 'Colombia', 'Colombia', 'ES', 0, 1),
+('CR', 8, 'Costa Rica', 'Costa Rica', 'ES', 0, 1),
+('CU', 9, 'Cuba', 'Cuba', 'ES', 0, 1),
+('DO', 26, 'República Dominicana', 'República Dominicana', 'ES', 0, 1),
+('EC', 10, 'Ecuador', 'Ecuador', 'ES', 0, 1),
+('ES', 12, 'España', 'Spain', 'ES', 0, 1),
+('GT', 14, 'Guatemala', 'Guatemala', 'ES', 0, 1),
+('GY', 15, 'Guyana', 'Guyana', 'EN', 0, 1),
+('HN', 17, 'Honduras', 'Honduras', 'ES', 0, 1),
+('HT', 16, 'Haiti', 'Haiti', 'EN', 0, 1),
+('IB', 31, 'Iberoamérica', 'Ibero-America', 'ES', 1, 1),
+('JM', 18, 'Jamaica', 'Jamaica', 'EN', 0, 1),
+('MX', 19, 'México', 'Mexico', 'ES', 0, 1),
+('NI', 20, 'Nicaragua', 'Nicaragua', 'ES', 0, 1),
+('PA', 21, 'Panamá', 'Panama', 'ES', 0, 1),
+('PE', 23, 'Perú', 'Perú', 'ES', 0, 1),
+('PR', 25, 'Puerto Rico', 'Puerto Rico', 'ES', 0, 1),
+('PT', 24, 'Portugal', 'Portugal', 'ES', 0, 1),
+('PY', 22, 'Paraguay', 'Paraguay', 'ES', 0, 1),
+('SV', 11, 'El Salvador', 'El Salvador', 'ES', 0, 1),
+('TL', 32, 'Total', 'Total', 'ES', 1, 1),
+('TT', 27, 'Trinidad y Tobago', 'Trinidad y Tobago', 'EN', 0, 1),
+('US', 13, 'Estados Unidos', 'United States', 'EN', 0, 1),
+('UY', 28, 'Uruguay', 'Uruguay', 'ES', 0, 1),
+('VE', 29, 'Venezuela', 'Venezuela', 'ES', 0, 1),
+('XX', 0, 'General', 'General', 'es', 1, 0);
 
-print  head ´cell´
+'CDCODBUS', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de investigación, ejecutado por el Sector Empresas (Publicas y Privadas)', 'R&D Expenditure by type of R&D, performed by business sector', 34, 1, 'Gasto en I+D por tipo de investigación, ejecutado por el Sector Empresas (Publicas y Privadas)', 'R&D Expenditure by type of R&D, performed by business sector', 0),
+    ('CDCOSBUS', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de costos, ejecutado por Sector EMPRESAS (Públicas y Privadas)', 'R&D expenditure by type of costs, performed by business enterprise (public and private)', 24, 1, 'Gasto en I+D por tipo de costos, ejecutado por Sector EMPRESAS (Públicas y Privadas)', 'R&D expenditure by type of costs, performed by business enterprise (public and private)', 0),
+    ('CDCOSEDU', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de costos, ejecutado por Sector Educación Superior', 'R&D expenditure by type of costs, performed by higher education', 26, 1, 'Gasto en I+D por tipo de costos, ejecutado por Sector Educación Superior', 'R&D expenditure by type of costs, performed by higher education', 0),
+    ('CDCOSONG', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de costos, ejecutado por Sector Org. Privadas sin fines de lucro', 'R&D expenditure by type of costs, performed by private non-profit', 28, 1, 'Gasto en I+D por tipo de costos, ejecutado por Sector Org. Privadas sin fines de lucro', 'R&D expenditure by type of costs, performed by private non-profit', 0),
+    ('CDCOSSEC', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de costos, ejecutado por Sector Gobierno', 'R&D expenditure by type of costs, performed by government sector', 22, 1, 'Gasto en I+D por tipo de costos, ejecutado por Sector Gobierno', 'R&D expenditure by type of costs, performed by government sector', 0),
+    ('CDDISBUS', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por disciplina científica, ejecutada por Sector EMPRESAS (Públicas y Privadas)', 'R&D expenditure by field of research & development, performed by business sector', 44, 1, 'Gasto en I+D por disciplina científica, ejecutada por Sector EMPRESAS (Públicas y Privadas)', 'R&D expenditure by field of research & development, performed by business sector', 0),
+    ('CDDISEDU', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por disciplina científica, ejecutada por Sector Educación Superior', 'R&D expenditure by field of research & development, performed by higher education', 46, 1, 'Gasto en I+D por disciplina científica, ejecutada por Sector Educación Superior', 'R&D expenditure by field of research & development, performed by higher education', 0),
+    ('CDDISONG', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por disciplina científica, ejecutada por Sector ORG. PRIVADAS SIN FINES DE LUCRO', 'R&D expenditure by field of research & development, performed by private non-profit', 48, 1, 'Gasto en I+D por disciplina científica, ejecutada por Sector ORG. PRIVADAS SIN FINES DE LUCRO', 'R&D expenditure by field of research & development, performed by private non-profit', 0),
+    ('CDOCTORADO', 'C', 'THINGS', 'CTI_GRD', 'Doctorados', 'Doctorates', 35, 1, 'Número de personas que se gradúa cada año en programas de doctorado, clasificados por área de la ciencia y la tecnología.', 'Number of people who graduate each year in doctoral programs, classified by area of science and technology.', 0),
+    ('CDTIPGOB', 'C', 'PERCENTAGE', 'CTI_IMD', 'Gasto en I+D por tipo de investigación, ejecutado por Sector Gobierno', 'R&D expenditure by type of research, performed by government sector', 32, 1, 'Gasto en I+D por tipo de investigación, ejecutado por Sector Gobierno', 'R&D expenditure by type of research, performed by government sector', 0),
+    ('CGRADO', 'C', 'THINGS', 'CTI_GRD', 'Titulados de grado', 'First level university graduates', 33, 1, 'Número de personas que se gradúa cada año en carreras universitarias de grado, de cuatro o más años de duración, clasificados por área de la ciencia y la tecnología.', 'Number of people graduating each year in bachelor\'s degree, four or more years of duration, classified by area of science and technology.', 0)
+]
+
+
 
