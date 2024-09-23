@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS cell;
+--
+-- Estructura de tabla para la tabla `cell`
+--
+CREATE TABLE cell (
+  id INT NOT NULL PRIMARY KEY DEFAULT 0,
+  country_id VARCHAR(2) NULL,
+  row_id VARCHAR(20) NULL,
+  indicator_id VARCHAR(20) NULL,
+  year INT NULL,
+  value DECIMAL(18, 4) NOT NULL
+);
